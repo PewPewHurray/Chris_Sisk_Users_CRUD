@@ -13,7 +13,6 @@ def to_users():
 def users():
 
     users = User.get_all()
-    print(users)
 
     return render_template("users.html", all_users = users)
 
@@ -41,7 +40,7 @@ def get_one_by_id(user_id):
         "id": user_id
     }
     one_user = User.get_one_by_id(data_dictionary)
-    print(one_user)
+
     return render_template("user_profile.html", one_user=one_user[0])
 
 @app.route("/users/<int:user_id>/edit")
